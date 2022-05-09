@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/09 10:44:45 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/09 14:05:14 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,31 +41,65 @@ RESET	:= "\033[0m"
 TEST	:= 300
 
 .c.o: $(SRCS)
-	@clear
-	@echo $(GREEN)"[Compiling objects... "$(YELLOW)"<$<>"$(GREEN)" ]"$(RESET)
+	@printf $(GREEN)"\r\033[K[Compiling objects... "$(YELLOW)"<$<>"$(GREEN)" ]"$(RESET)
 	@$(CC) $(OFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
 	@make -C srcs/libft
 	@make -C srcs/printf
-	@echo $(CYAN)"[Compiling '$(NAME)'...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Compiling '$(NAME)'...]"$(RESET)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBS) -I include/ -o $(NAME)
-	@clear
-	@echo $(GREEN)"Success compiling '$(NAME)'"$(RESET)
+	@printf $(GREEN)"\r\033[KSuccess compiling '$(NAME)'\n"$(RESET)
 
 visualizer: all
 	@python3 pyviz.py `ruby -e "puts (1..$(TEST)).to_a.shuffle.join(' ')"`
 
 all: $(NAME)
+# @printf '\r █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r █████▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ██████▒▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ███████▒▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ████████▒▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r █████████▒▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ██████████▒▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ███████████▒▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ████████████▒▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r █████████████▒▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ██████████████▒▒▒▒\r'
+# @sleep .1
+# @printf '\r ███████████████▒▒▒\r'
+# @sleep .1
+# @printf '\r ████████████████▒▒\r'
+# @sleep .1
+# @printf '\r █████████████████▒\r'
+# @sleep .1
+# @printf '\r ██████████████████\r'
+# @sleep .1
 
 clean:
-	@echo $(CYAN)"[Erasing objects...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Erasing objects...]"$(RESET)
 	@$(RM) $(OBJS)
 	@make -C srcs/libft fclean
 	@make -C srcs/printf fclean
 
 fclean: clean
-	@echo $(CYAN)"[Erasing binary file...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Erasing binary file...]"$(RESET)
 	@$(RM) $(NAME) test_parser
 
 re: fclean all

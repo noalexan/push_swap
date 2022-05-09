@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/05 17:52:38 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/09 14:01:38 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,22 +69,22 @@ RM		:= rm -rf
 AR		:= ar rcs
 
 .c.o:
-	@clear
-	@echo $(GREEN)"[Compiling libft... "$(YELLOW)"<$<>"$(GREEN)" ]"$(RESET)
+	@printf $(GREEN)"\r\033[K[Compiling libft... "$(YELLOW)"<$<>"$(GREEN)" ]"$(RESET)
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.
 
 $(NAME): $(OBJS)
-	@echo $(CYAN)"[Compiling '$(NAME)'...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Compiling '$(NAME)'...]"$(RESET)
 	@$(AR) $(NAME) $(OBJS)
+	@printf $(GREEN)"\r\033[KSuccess compiling '$(NAME)'"$(RESET)
 
 all: $(NAME)
 
 clean:
-	@echo $(CYAN)"[Erasing libft...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Erasing libft...]"$(RESET)
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo $(CYAN)"[Erasing $(NAME)...]"$(RESET)
+	@printf $(CYAN)"\r\033[K[Erasing $(NAME)...]"$(RESET)
 	@$(RM) $(NAME)
 
 re: fclean all
