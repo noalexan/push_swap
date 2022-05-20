@@ -6,15 +6,13 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:22:32 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/05/09 09:25:26 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:49:46 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "../../includes/structs.h"
+#include "../../includes/push_swap.h"
 
-t_stack	*ft_lstnew(int value)
+t_stack	*ft_lstnew(int value, int index, int order, t_stack *next)
 {
 	t_stack	*stack;
 
@@ -22,7 +20,8 @@ t_stack	*ft_lstnew(int value)
 	if (!stack)
 		return (NULL);
 	stack->value = value;
-	stack->next = NULL;
-	stack->index = 0;
+	stack->next = next;
+	stack->index = index;
+	stack->order = order;
 	return (stack);
 }

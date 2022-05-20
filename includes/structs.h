@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:38:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/09 10:45:38 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:33:07 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_stacks
 	t_stack	*b;
 	t_group	groups[3];
 	int		nb_of_args;
+	int		size_a;
+	int		size_b;
 }		t_stacks;
 
 #endif

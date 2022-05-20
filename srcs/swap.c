@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:42:38 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/05/05 14:22:25 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:52:27 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	swap_a(t_stacks *stacks, int must_print)
 	stacks->a = stacks->a->next;
 	stacks->a->next = tmp;
 	stacks->a->next->next = next;
+	set_index(stacks);
 }
 
 void	swap_b(t_stacks *stacks, int must_print)
@@ -38,6 +39,7 @@ void	swap_b(t_stacks *stacks, int must_print)
 	stacks->b = stacks->b->next;
 	stacks->b->next = tmp;
 	stacks->b->next->next = next;
+	set_index(stacks);
 }
 
 void	ss(t_stacks *stacks, int must_print)

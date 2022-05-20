@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/09 14:01:38 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/10 12:45:16 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ AR		:= ar rcs
 $(NAME): $(OBJS)
 	@printf $(CYAN)"\r\033[K[Compiling '$(NAME)'...]"$(RESET)
 	@$(AR) $(NAME) $(OBJS)
-	@printf $(GREEN)"\r\033[KSuccess compiling '$(NAME)'"$(RESET)
+	@printf $(GREEN)"\r\033[KPrintf compiled succesfully\n"$(RESET)
 
 all: $(NAME)
 

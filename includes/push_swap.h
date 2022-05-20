@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/05/09 10:29:01 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:51:50 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		size_of_stack(t_stack *stack);
 int		nb_of_chunck(t_stack *stack);
 void	check_double(t_stack *stack);
 void	set_group(t_stacks *stacks);
+void	set_index(t_stacks *stacks);
 
 /* ============== SORT =============== */
 

@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:04:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/05 17:30:05 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:53:48 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-t_stack	*ft_lstnew(int value);
+t_stack	*ft_lstnew(int value, int index, int order, t_stack *next);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lst_before_last(t_stack *lst);

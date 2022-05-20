@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:13:03 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:51:59 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/05/10 09:30:26 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*duplicator(const char *str, int start, int end)
 	char	*word;
 
 	i = 0;
-	word = malloc((end - start + 1) * sizeof(char));
+	word = ft_calloc((end - start + 1), sizeof(char));
 	if (!word || !str)
 		return (0);
 	while (start < end)
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	trigger = -1;
-	result = malloc((counter(s, c) + 1) * sizeof(char *));
+	result = ft_calloc((counter(s, c) + 1), sizeof(char *));
 	if (!s || !result)
 		return (0);
 	while (i <= ft_strlen(s))

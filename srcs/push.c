@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:33:43 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/09 11:11:26 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:52:12 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	push_b(t_stacks *stacks, int must_print)
 		stacks->a = stacks->a->next;
 		tmp->next = stacks->b;
 		stacks->b = tmp;
+		stacks->size_a--;
+		stacks->size_b++;
+		set_index(stacks);
 	}
 }
 
@@ -39,5 +42,8 @@ void	push_a(t_stacks *stacks, int must_print)
 		stacks->b = stacks->b->next;
 		tmp->next = stacks->a;
 		stacks->a = tmp;
+		stacks->size_a++;
+		stacks->size_b--;
+		set_index(stacks);
 	}
 }

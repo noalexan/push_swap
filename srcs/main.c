@@ -6,13 +6,13 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:01:57 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/05/09 11:30:08 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:56:59 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*parse_args(char **argv, int **nb)
+t_stack	*parse_args(char **argv, int *nb)
 {
 	t_stack	*stack;
 	int		i;
@@ -21,44 +21,39 @@ t_stack	*parse_args(char **argv, int **nb)
 		return (NULL);
 	i = -1;
 	stack = NULL;
-	stack = ft_lstnew(ft_atoi(argv[0]));
-	stack->index = **nb;
-	**nb += 1;
-	stack->next = parse_args(argv + 1, nb);
+	stack = ft_lstnew(ft_atoi(argv[0]), *nb, 0, parse_args(argv + 1, nb));
+	*nb += 1;
 	return (stack);
 }
 
-t_stack	*parse_argv(char **argv, int *nb)
-{
-	t_stack	*stack;
-	t_stack	*tmp;
-	int		i;
+// t_stack	*parse_argv(char **argv, int *nb)
+// {
+// 	t_stack	*stack;
+// 	int		i;
 
-	i = 1;
-	stack = parse_args(ft_split(argv[i], ' '), &nb);
-	while (argv[++i])
-	{
-		tmp = ft_lstlast(stack);
-		tmp->next = parse_args(ft_split(argv[i], ' '), &nb);
-	}
-	check_double(stack);
-	return (stack);
-}
+// 	i = 1;
+// 	stack = parse_args(ft_split(argv[i], ' '), &nb);
+// 	while (argv[++i])
+// 		ft_lstlast(stack)->next = parse_args(ft_split(argv[i], ' '), &nb);
+// 	check_double(stack);
+// 	return (stack);
+// }
 
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
 
-	if (argc < 3)
-		err();
+	(void) argc;
 	stacks.nb_of_args = 0;
-	stacks.a = parse_argv(argv, &stacks.nb_of_args);
+	stacks.a = parse_args(argv, &stacks.nb_of_args);
+	if (stacks.nb_of_args < 2)
+		err();
 	stacks.b = NULL;
 	if (!stacks.a)
 		err();
 	set_group(&stacks);
 	first_sort(&stacks);
 	ft_lstclear(stacks.a);
-	ft_lstclear(stacks.b);
+	system("leaks push_swap");
 	exit(EXIT_SUCCESS);
 }

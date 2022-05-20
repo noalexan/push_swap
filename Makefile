@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/09 14:05:14 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/10 09:14:18 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ TEST	:= 300
 	@$(CC) $(OFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
+	@printf $(GREEN)"\r\033[KObjects compiled succesfully\n"$(RESET)
 	@make -C srcs/libft
 	@make -C srcs/printf
 	@printf $(CYAN)"\r\033[K[Compiling '$(NAME)'...]"$(RESET)
@@ -52,45 +53,49 @@ $(NAME): $(OBJS)
 	@printf $(GREEN)"\r\033[KSuccess compiling '$(NAME)'\n"$(RESET)
 
 visualizer: all
+	@printf $(GREEN)"\r\033[KLaunching python visualizer..."$(RESET)
 	@python3 pyviz.py `ruby -e "puts (1..$(TEST)).to_a.shuffle.join(' ')"`
+	@printf $(GREEN)"\r\033[KPython visualizer launched succesfully\n"$(RESET)
 
 all: $(NAME)
-# @printf '\r █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r █████▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ██████▒▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ███████▒▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ████████▒▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r █████████▒▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ██████████▒▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ███████████▒▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ████████████▒▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r █████████████▒▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ██████████████▒▒▒▒\r'
-# @sleep .1
-# @printf '\r ███████████████▒▒▒\r'
-# @sleep .1
-# @printf '\r ████████████████▒▒\r'
-# @sleep .1
-# @printf '\r █████████████████▒\r'
-# @sleep .1
-# @printf '\r ██████████████████\r'
-# @sleep .1
+
+load:
+	@printf '\r █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r █████▒▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ██████▒▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ███████▒▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ████████▒▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r █████████▒▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ██████████▒▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ███████████▒▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ████████████▒▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r █████████████▒▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ██████████████▒▒▒▒\r'
+	@sleep .1
+	@printf '\r ███████████████▒▒▒\r'
+	@sleep .1
+	@printf '\r ████████████████▒▒\r'
+	@sleep .1
+	@printf '\r █████████████████▒\r'
+	@sleep .1
+	@printf '\r ██████████████████\r'
+	@sleep .1
 
 clean:
 	@printf $(CYAN)"\r\033[K[Erasing objects...]"$(RESET)
@@ -101,6 +106,7 @@ clean:
 fclean: clean
 	@printf $(CYAN)"\r\033[K[Erasing binary file...]"$(RESET)
 	@$(RM) $(NAME) test_parser
+	@printf $(GREEN)"\r\033[KForce cleaned\n"$(RESET)
 
 re: fclean all
 
