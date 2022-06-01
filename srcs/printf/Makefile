@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/09 17:34:37 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/31 14:47:45 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,31 +20,31 @@ SRCS	:=	ft_printf.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
-GREEN	:= "\033[0;32m"
-CYAN	:= "\033[0;36m"
-YELLOW	:= "\033[0;33m"
+GREEN	:= "\033[0m\033[1;32m"
+CYAN	:= "\033[0m\033[1;36m"
+YELLOW	:= "\033[0m\033[1;33m\033[3;33m"
 RESET	:= "\033[0m"
 
 RM		:= rm -rf
 AR		:= ar rcs
 
 .c.o:
-	@printf $(GREEN)"\r\033[K[Compiling printf... "$(YELLOW)"<$<>"$(GREEN)" ]"$(RESET)
+	@printf $(GREEN)"\r\033[KCompiling printf... "$(YELLOW)"<$<> "$(RESET)"⏳"
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.
 
 $(NAME): $(OBJS)
-	@printf $(CYAN)"\r\033[K[Compiling '$(NAME)'...]"$(RESET)
+	@printf $(CYAN)"\r\033[KCompiling '$(NAME)'... "$(RESET)"⏳"
 	@$(AR) $(NAME) $(OBJS)
-	@printf $(GREEN)"\r\033[KLibft compiled succesfully\n"$(RESET)
+	@printf $(GREEN)"\r\033[KPrintf compiled succesfully ✅\n"$(RESET)
 
 all: $(NAME)
 
 clean:
-	@printf $(CYAN)"\r\033[K[Erasing printf...]"$(RESET)
+	@printf $(CYAN)"\r\033[KErasing printf... "$(RESET)"⏳"
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@printf $(CYAN)"\r\033[K[Erasing $(NAME)...]"$(RESET)
+	@printf $(CYAN)"\r\033[KErasing $(NAME)... "$(RESET)"⏳"
 	@$(RM) $(NAME)
 
 re: fclean all

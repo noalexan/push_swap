@@ -6,57 +6,17 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/31 14:47:50 by noalexan         ###   ########.fr        #
+#    Updated: 2022/05/31 14:47:53 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		:= gcc
 CFLAGS	:= -Werror -Wextra -Wall
 
-NAME	:= libft.a
+NAME	:= get_next_line.a
 
-SRCS	:=	ft_atoi.c \
-			ft_bzero.c \
-			ft_calloc.c \
-			ft_foreach.c \
-			ft_isalnum.c \
-			ft_isalpha.c \
-			ft_isascii.c \
-			ft_isdigit.c \
-			ft_isprint.c \
-			ft_itoa.c \
-			ft_lst_before_last.c \
-			ft_lstadd_back.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstlast.c \
-			ft_lstnew.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_memset.c \
-			ft_putchar_fd.c \
-			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_split.c \
-			ft_strchr.c \
-			ft_strcmp.c \
-			ft_strdup.c \
-			ft_striteri.c \
-			ft_strjoin.c \
-			ft_strlcat.c \
-			ft_strlcpy.c \
-			ft_strlen.c \
-			ft_strmapi.c \
-			ft_strncmp.c \
-			ft_strnstr.c \
-			ft_strrchr.c \
-			ft_strtrim.c \
-			ft_substr.c \
-			ft_tolower.c \
-			ft_toupper.c \
+SRCS	:=	get_next_line.c \
+			get_next_line_utils.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
@@ -69,18 +29,18 @@ RM		:= rm -rf
 AR		:= ar rcs
 
 .c.o:
-	@printf $(GREEN)"\r\033[KCompiling libft... "$(YELLOW)"<$<> "$(RESET)"⏳"
+	@printf $(GREEN)"\r\033[KCompiling printf... "$(YELLOW)"<$<> "$(RESET)"⏳"
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.
 
 $(NAME): $(OBJS)
 	@printf $(CYAN)"\r\033[KCompiling '$(NAME)'... "$(RESET)"⏳"
 	@$(AR) $(NAME) $(OBJS)
-	@printf $(GREEN)"\r\033[KLibft compiled succesfully ✅\n"$(RESET)
+	@printf $(GREEN)"\r\033[KGet_Next_Line compiled succesfully ✅\n"$(RESET)
 
 all: $(NAME)
 
 clean:
-	@printf $(CYAN)"\r\033[KErasing libft... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing printf... "$(RESET)"⏳"
 	@$(RM) $(OBJS)
 
 fclean: clean
