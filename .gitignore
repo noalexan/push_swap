@@ -1,6 +1,6 @@
 .vscode
 .DS_Store
-pipex
+push_swap
 *test*
 *.icloud
 *.o
