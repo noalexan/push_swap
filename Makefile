@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/02 15:28:57 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/03 10:20:44 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,13 @@ OFLAGS	:= -Werror -Wextra -Wall
 NAME	:= push_swap
 
 SRCS	:=	srcs/main.c \
+			srcs/parse.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
 LIBS	:=	srcs/libft/libft.a \
-			srcs/printf/printf.a \
-			srcs/get_next_line/get_next_line.a \
+			srcs/ft_printf/libftprintf.a \
+			srcs/get_next_line/libGNL.a \
 
 GREEN	:= "\033[0m\033[1;32m"
 CYAN	:= "\033[0m\033[1;36m"
@@ -35,13 +36,13 @@ RM		:= rm -rf
 TEST    := 300
 
 .c.o: $(SRCS)
-	@printf $(GREEN)"\r\033[KCompiling objects... "$(YELLOW)"<$<> "$(RESET)"⏳"
+	@printf $(GREEN)"\r\033[KCompiling objects... "$(YELLOW)"<$<> "$(RESET)"⏳ "
 	@$(CC) $(OFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
 	@printf $(GREEN)"\r\033[KObjects compiled succesfully ✅\n"$(RESET)
 	@make -C srcs/libft
-	@make -C srcs/printf
+	@make -C srcs/ft_printf
 	@make -C srcs/get_next_line
 	@printf $(CYAN)"\r\033[KCompiling '$(NAME)'... ⏳"$(RESET)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBS) -I include/ -o $(NAME)
@@ -99,20 +100,20 @@ load:
 	@sleep .8
 
 clean:
-	@printf $(CYAN)"\r\033[KErasing objects... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing objects... "$(RESET)"⏳ "
 	@$(RM) $(OBJS)
 	@make -C srcs/libft fclean
-	@make -C srcs/printf fclean
+	@make -C srcs/ft_printf fclean
 	@make -C srcs/get_next_line fclean
 	@printf $(GREEN)"\r\033[Kcleaned 🗑\n"$(RESET)
 
 fclean:
-	@printf $(CYAN)"\r\033[KErasing objects... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing objects... "$(RESET)"⏳ "
 	@$(RM) $(OBJS)
 	@make -C srcs/libft fclean
-	@make -C srcs/printf fclean
+	@make -C srcs/ft_printf fclean
 	@make -C srcs/get_next_line fclean
-	@printf $(CYAN)"\r\033[KErasing binary file... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing binary file... "$(RESET)"⏳ "
 	@$(RM) $(NAME) test_parser
 	@printf $(GREEN)"\r\033[KForce cleaned 🗑\n"$(RESET)
 

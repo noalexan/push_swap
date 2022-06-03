@@ -6,16 +6,16 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:51:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/12 09:01:18 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:09:53 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../../includes/push_swap.h"
 
 static int	ft_isspace(char a)
 {
-	if ((a == ' ') || (a == '\t') || (a == '\v') || (a == '\n')
-		|| (a == '\r') || (a == '\f'))
+	if ((a == ' ') || (a == '\t') || (a == '\v')
+		|| (a == '\n') || (a == '\r') || (a == '\f'))
 		return (1);
 	return (0);
 }

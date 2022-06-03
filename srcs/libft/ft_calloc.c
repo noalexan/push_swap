@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 12:57:52 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:50:30 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:10:33 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {

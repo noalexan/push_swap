@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:15:31 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:51:59 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:23:00 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {

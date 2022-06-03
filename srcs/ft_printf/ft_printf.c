@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:36:18 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/30 09:51:15 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:07:05 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../../includes/push_swap.h"
 
 static int	ft_percent(va_list param, const char character, int fd)
 {
@@ -54,10 +54,11 @@ int	ft_printf(int fd, const char *string, ...)
 			size += ft_putchar(string[i], fd);
 		i++;
 	}
-	if (fd == 2)
-	{
-		write(1, "\n", 1);
-		exit(EXIT_FAILURE);
-	}
 	return (size);
+}
+
+void	err(void)
+{
+	write(2, "error.\n", 8);
+	exit(EXIT_FAILURE);
 }

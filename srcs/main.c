@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 09:52:05 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 10:15:37 by noalexan         ###   ########.fr       */
+/*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
+/*   Updated: 2022/06/03 16:15:07 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	main(int argc, char *argv[])
 {
-	int	i;
+	t_stack	*a;
+	t_stack	*b;
 
-	i = -1;
-	while (s[++i])
-		ft_putchar_fd(s[i], fd);
+	if (argc < 2)
+		err();
+	a = parse_args(argv + 1);
+	b = NULL;
+	lst_clear(a);
+	return (0);
 }

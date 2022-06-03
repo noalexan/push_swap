@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:18 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:50:47 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:15:17 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 
 	i = -1;
 	while (++i < size)
-		if (((unsigned char *) memoryBlock)[i] == (unsigned char) searchedChar)
-			return ((void *) &memoryBlock[i]);
+		if (((unsigned char *)memoryBlock)[i] == (unsigned char)searchedChar)
+			return ((void *)&memoryBlock[i]);
 	return (NULL);
 }

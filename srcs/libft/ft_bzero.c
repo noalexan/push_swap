@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:51:53 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/05 13:12:35 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:10:05 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 void	ft_bzero(void *array, size_t size)
 {

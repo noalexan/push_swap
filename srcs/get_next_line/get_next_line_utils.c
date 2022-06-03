@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 12:07:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/13 09:35:35 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:08:52 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../../includes/push_swap.h"
 
 int	there_is_a_end_of_line(char *save)
 {

@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:05:48 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/23 10:03:37 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:16:22 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 static char	*ecriture2(char *result, const char *s1, const char *s2)
 {
@@ -25,7 +25,7 @@ static char	*ecriture2(char *result, const char *s1, const char *s2)
 			j = ft_strlen(result);
 		while (i < ft_strlen(s2))
 		{
-			((char *) result)[j] = ((char *) s2)[i];
+			((char *)result)[j] = ((char *)s2)[i];
 			i++;
 			j++;
 		}
@@ -43,7 +43,7 @@ static char	*ecriture(char *result, const char *s1, const char *s2)
 	{
 		while (i < ft_strlen(s1))
 		{
-			((char *) result)[i] = ((char *) s1)[i];
+			((char *)result)[i] = ((char *)s1)[i];
 			i++;
 		}
 	}

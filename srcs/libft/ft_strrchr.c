@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:52:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:51:59 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:14:46 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 char	*ft_strrchr(const char *string, int searchedChar)
 {
@@ -20,9 +20,9 @@ char	*ft_strrchr(const char *string, int searchedChar)
 		return (NULL);
 	i = ft_strlen(string) + 1;
 	while (--i > 0)
-		if (((unsigned char *) string)[i] == (unsigned char) searchedChar)
-			return (&((char *) string)[i]);
-	if (((unsigned char *) string)[i] == (unsigned char) searchedChar)
-		return (&((char *) string)[i]);
+		if (((unsigned char *)string)[i] == (unsigned char)searchedChar)
+			return (&((char *)string)[i]);
+	if (((unsigned char *)string)[i] == (unsigned char)searchedChar)
+		return (&((char *)string)[i]);
 	return (NULL);
 }

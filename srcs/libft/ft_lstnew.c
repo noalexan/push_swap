@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:22:32 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/05/09 14:49:46 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 09:39:57 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap.h" "../../includes/push_swap.h"
 
 t_stack	*ft_lstnew(int value, int index, int order, t_stack *next)
 {

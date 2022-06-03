@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:52:35 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:51:59 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:15:58 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 size_t	ft_strlcat(char *destination, const char *source, size_t size)
 {
-	size_t	i;	
+	size_t	i;
 	size_t	j;
 
 	i = 0;
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *destination, const char *source, size_t size)
 	j = ft_strlen(destination);
 	while (source[i] != '\0' && j + 1 < size)
 	{
-		((char *) destination)[j] = ((char *) source)[i];
+		((char *)destination)[j] = ((char *)source)[i];
 		i++;
 		j++;
 	}

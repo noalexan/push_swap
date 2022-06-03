@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/02 15:55:50 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:42:00 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+t_stack	*parse_args(char *argv[]);
+void	lst_clear(t_stack *stack);
 
 #endif

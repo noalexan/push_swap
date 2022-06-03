@@ -6,11 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:13:03 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/12 12:47:01 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:11:28 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 int	counter(const char *str, char c)
 {
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	if (!s || !result)
 		return (0);
 	while (i <= ft_strlen(s))
-	{	
+	{
 		if (s[i] != c && trigger < 0)
 			trigger = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && trigger >= 0)

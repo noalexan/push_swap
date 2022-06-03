@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:52:33 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/26 20:51:59 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/03 10:12:17 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/push_swap.h"
 
 char	*ft_strchr(const char *string, int searchedChar)
 {
@@ -20,9 +20,9 @@ char	*ft_strchr(const char *string, int searchedChar)
 	if (!string)
 		return (NULL);
 	while (string[++i])
-		if (((unsigned char *) string)[i] == (unsigned char) searchedChar)
-			return (&((char *) string)[i]);
+		if (((unsigned char *)string)[i] == (unsigned char)searchedChar)
+			return (&((char *)string)[i]);
 	if (string[i] == searchedChar)
-		return (&((char *) string)[i]);
+		return (&((char *)string)[i]);
 	return (NULL);
 }

@@ -6,18 +6,26 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:04:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/04/29 10:31:15 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 09:34:02 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "push_swap.h"
+
 # include <stdio.h>
 # include <errno.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_stack
+{
+	int				nbr;
+	struct s_stack	*next;
+}			t_stack;
 
 int		ft_isalpha(int character);
 int		ft_isdigit(int character);
@@ -54,5 +62,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_stack	*ft_lstlast(t_stack *lst);
 
 #endif

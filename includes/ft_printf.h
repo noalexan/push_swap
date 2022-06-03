@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 11:07:26 by noalexan          #+#    #+#             */
-/*   Updated: 2022/05/30 09:47:42 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:56:57 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int		ft_putunsignednbr(unsigned int nb, int fd);
 int		ft_putstr(char *str, int fd);
 int		ft_puthexa(unsigned long nb, int upper, int add, int fd);
 
-void	err(const char *string, ...);
+void	err(void);
 
 #endif

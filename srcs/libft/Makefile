@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/05/31 14:47:50 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/03 11:52:44 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS	:=	ft_atoi.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
+			ft_lstlast.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
@@ -63,22 +64,22 @@ RM		:= rm -rf
 AR		:= ar rcs
 
 .c.o:
-	@printf $(GREEN)"\r\033[KCompiling libft... "$(YELLOW)"<$<> "$(RESET)"⏳"
+	@printf $(GREEN)"\r\033[KCompiling libft... "$(YELLOW)"<$<> "$(RESET)"⏳ "
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.
 
 $(NAME): $(OBJS)
-	@printf $(CYAN)"\r\033[KCompiling '$(NAME)'... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KCompiling '$(NAME)'... "$(RESET)"⏳ "
 	@$(AR) $(NAME) $(OBJS)
 	@printf $(GREEN)"\r\033[KLibft compiled succesfully ✅\n"$(RESET)
 
 all: $(NAME)
 
 clean:
-	@printf $(CYAN)"\r\033[KErasing libft... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing libft... "$(RESET)"⏳ "
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@printf $(CYAN)"\r\033[KErasing $(NAME)... "$(RESET)"⏳"
+	@printf $(CYAN)"\r\033[KErasing $(NAME)... "$(RESET)"⏳ "
 	@$(RM) $(NAME)
 
 re: fclean all
