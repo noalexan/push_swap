@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 17:47:39 by noalexan         ###   ########.fr       */
+/*   Created: 2022/06/03 16:49:54 by noalexan          #+#    #+#             */
+/*   Updated: 2022/06/03 16:51:51 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	size_of_stack(t_stack *stack)
 {
-	t_stacks	stacks;
+	int	size;
 
-	if (argc < 2)
-		err();
-	stacks.nb_of_args = 0;
-	stacks.a = parse_args(argv + 1, &stacks.nb_of_args);
-	stacks.b = NULL;
-	sort(&stacks);
-	lst_clear(stacks.a);
-	system("leaks push_swap");
-	return (0);
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
+
+void	check_double(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		while (tmp)
+		{
+			if (tmp->nbr == stack->nbr)
+				err();
+			tmp = tmp->next;
+		}
+		stack = stack->next;
+	}
 }

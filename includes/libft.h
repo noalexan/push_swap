@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:04:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 09:34:02 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:10:00 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ typedef struct s_stack
 	int				nbr;
 	struct s_stack	*next;
 }			t_stack;
+
+typedef struct s_stacks
+{
+	t_stack	*a;
+	t_stack	*b;
+	int		nb_of_args;
+}			t_stacks;
 
 int		ft_isalpha(int character);
 int		ft_isdigit(int character);

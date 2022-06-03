@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/03 10:20:44 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/03 17:17:28 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,16 @@ OFLAGS	:= -Werror -Wextra -Wall
 NAME	:= push_swap
 
 SRCS	:=	srcs/main.c \
+			srcs/push.c \
+			srcs/sort.c \
 			srcs/parse.c \
+			srcs/utils.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
 LIBS	:=	srcs/libft/libft.a \
-			srcs/ft_printf/libftprintf.a \
 			srcs/get_next_line/libGNL.a \
+			srcs/ft_printf/libftprintf.a \
 
 GREEN	:= "\033[0m\033[1;32m"
 CYAN	:= "\033[0m\033[1;36m"

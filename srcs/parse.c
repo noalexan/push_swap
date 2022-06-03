@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 16:10:34 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:15:40 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,31 @@ t_stack	*parse_args3(int nb)
 	return (stack);
 }
 
-t_stack	*parse_args2(char **argv)
+t_stack	*parse_args2(char **argv, int *nb)
 {
 	t_stack	*stack;
 
 	if (!argv[0])
 		return (NULL);
-	stack = parse_args3(ft_atoi(argv[0]));
-	stack->next = parse_args2(argv + 1);
+	*nb += 1;
+	stack = parse_args3(ft_atoi(*argv));
+	stack->next = parse_args2(argv + 1, nb);
 	free(argv[0]);
 	return (stack);
 }
 
-t_stack	*parse_args(char **argv)
+t_stack	*parse_args(char **argv, int *nb)
 {
 	t_stack	*stack;
 	char	**split;
 
-	if (!argv[0])
+	if (!*argv)
 		return (NULL);
-	split = ft_split(argv[0], ' ');
-	stack = parse_args2(split);
+	split = ft_split(*argv, ' ');
+	stack = parse_args2(split, nb);
 	free(split);
-	ft_lstlast(stack)->next = parse_args(argv + 1);
+	ft_lstlast(stack)->next = parse_args(argv + 1, nb);
+	check_double(stack);
 	return (stack);
 }
 

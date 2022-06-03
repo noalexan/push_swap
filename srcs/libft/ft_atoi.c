@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:51:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 10:09:53 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:55:22 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int	ft_atoi(const char *nptr)
 		value += nptr[i] - 48;
 		i++;
 	}
+	if (!(nptr[i] <= '0') || !(nptr[i] <= '9'))
+		err();
 	return (value * sig);
 }
