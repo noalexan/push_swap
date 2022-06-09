@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:49:54 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 16:51:51 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/09 11:29:25 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,26 @@ void	check_double(t_stack *stack)
 		}
 		stack = stack->next;
 	}
+}
+
+t_stack	*get_min_value(int nb, t_stack *stack)
+{
+	t_stack	*min;
+
+	return (min);
+}
+
+t_stack	*get_next_value(t_stack *stack, int first)
+{
+	int	j;
+	int	i;
+	int	min;
+
+	j = first + 1;
+	i = -1;
+	min = get_min_value(stack)->nbr;
+	while (j > min)
+	{
+	}
+	return (NULL);
 }

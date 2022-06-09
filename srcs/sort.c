@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/03 17:47:26 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:06:55 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ typedef struct s_way
 
 t_way	count_move_to_do(t_stacks *stacks, char direction)
 {
-	int	i;
-
-	i = -1;
+	(void) stacks;
 	if (direction == 'U')
 	{
 		return ((t_way){direction, 10});
@@ -53,4 +51,9 @@ void	sort(t_stacks *stacks)
 	i = -1;
 	while (++i < stacks->nb_of_args)
 		push_b(stacks, 1);
+	i = -1;
+	while (++i < stacks->nb_of_args)
+	{
+		
+	}
 }
