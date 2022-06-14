@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/09 15:36:10 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:04:20 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	check_double(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		while (tmp)
+		{
+			if (tmp->nbr == stack->nbr)
+				err();
+			tmp = tmp->next;
+		}
+		stack = stack->next;
+	}
+}
 
 t_stack	*parse_args3(int nb)
 {

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
+#    By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/03 17:17:28 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/13 17:05:05 by noahalexand      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS	:=	srcs/main.c \
 			srcs/push.c \
 			srcs/sort.c \
 			srcs/parse.c \
-			srcs/utils.c \
+			srcs/groups.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
