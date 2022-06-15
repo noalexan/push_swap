@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/13 16:37:09 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/14 12:05:45 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 t_stack	*parse_args(char **argv, int *nb);
 void	check_double(t_stack *stack);
+void	set_groups(t_stack *stack);
 void	first_sort(t_stacks *stacks);
 void	push_b(t_stacks *stacks, int must_print);
 int		size_of_stack(t_stack *stack);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/13 17:04:20 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/15 16:21:00 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack	*parse_args2(char **argv, int *nb)
 {
 	t_stack	*stack;
 
-	if (!argv[0])
+	if (!*argv)
 		return (NULL);
 	*nb += 1;
 	stack = parse_args3(ft_atoi(*argv));
@@ -55,6 +55,7 @@ t_stack	*parse_args2(char **argv, int *nb)
 t_stack	*parse_args(char **argv, int *nb)
 {
 	t_stack	*stack;
+	t_stack	*next;
 	char	**split;
 
 	if (!*argv)
@@ -62,8 +63,10 @@ t_stack	*parse_args(char **argv, int *nb)
 	split = ft_split(*argv, ' ');
 	stack = parse_args2(split, nb);
 	free(split);
-	ft_lstlast(stack)->next = parse_args(argv + 1, nb);
+	next = ft_lstlast(stack);
+	next->next = parse_args(argv + 1, nb);
 	check_double(stack);
+	set_groups(stack);
 	return (stack);
 }
 

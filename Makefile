@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+         #
+#    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/13 17:05:05 by noahalexand      ###   ########.fr        #
+#    Updated: 2022/06/15 16:07:14 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,18 @@ SRCS	:=	srcs/main.c \
 			srcs/sort.c \
 			srcs/parse.c \
 			srcs/groups.c \
+			srcs/rotate.c \
 
 OBJS	:= $(SRCS:.c=.o)
 
 LIBS	:=	srcs/libft/libft.a \
 			srcs/get_next_line/libGNL.a \
 			srcs/ft_printf/libftprintf.a \
+
+INCL	:=	includes/libft.h \
+			includes/ft_printf.h \
+			includes/push_swap.h \
+			includes/get_next_line.h \
 
 GREEN	:= "\033[0m\033[1;32m"
 CYAN	:= "\033[0m\033[1;36m"
@@ -36,7 +42,7 @@ RESET	:= "\033[0m"
 
 RM		:= rm -rf
 
-TEST    := 300
+TEST    := 250
 
 .c.o: $(SRCS)
 	@printf $(GREEN)"\r\033[KCompiling objects... "$(YELLOW)"<$<> "$(RESET)"⏳ "
@@ -60,47 +66,47 @@ all: $(NAME)
 
 load:
 	@printf '\r █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 0%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 5%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 10%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 15%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 20%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 25%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒ - 30%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ████████▒▒▒▒▒▒▒▒▒▒▒▒▒ - 35%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r █████████▒▒▒▒▒▒▒▒▒▒▒▒ - 40%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ██████████▒▒▒▒▒▒▒▒▒▒▒ - 45%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ███████████▒▒▒▒▒▒▒▒▒▒ - 50%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ████████████▒▒▒▒▒▒▒▒▒ - 55%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r █████████████▒▒▒▒▒▒▒▒ - 60%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ██████████████▒▒▒▒▒▒▒ - 65%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ███████████████▒▒▒▒▒▒ - 70%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ████████████████▒▒▒▒▒ - 75%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r █████████████████▒▒▒▒ - 80%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ██████████████████▒▒▒ - 85%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ███████████████████▒▒ - 90%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r ████████████████████▒ - 95%%\r'
-	@sleep .1
+	@sleep .01
 	@printf '\r █████████████████████ - 100%% \r'
-	@sleep .8
+	@sleep .08
 
 clean:
 	@printf $(CYAN)"\r\033[KErasing objects... "$(RESET)"⏳ "

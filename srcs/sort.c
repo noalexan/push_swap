@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/13 16:40:31 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/14 12:18:46 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	first_sort(t_stacks *stacks)
 	i = -1;
 	while (++i < stacks->nb_of_args)
 	{
-		push_b(stacks, 1);
+		if (stacks->a->group == 0)
+		{
+			push_b(stacks, 1);
+		}
 	}
 }
