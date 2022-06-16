@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/15 16:07:14 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/16 14:02:44 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ OFLAGS	:= -Werror -Wextra -Wall
 
 NAME	:= push_swap
 
-SRCS	:=	srcs/main.c \
+SRCS	:=	srcs/way.c \
+			srcs/main.c \
 			srcs/push.c \
 			srcs/sort.c \
 			srcs/parse.c \

@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   way.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 16:22:57 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/16 14:00:01 by noalexan         ###   ########.fr       */
+/*   Created: 2022/06/16 14:02:48 by noalexan          #+#    #+#             */
+/*   Updated: 2022/06/16 14:46:02 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_b(t_stacks *stacks, int must_print)
+t_way	test_way(t_stack *stack, unsigned char direction)
 {
-	t_stack	*tmp;
-
-	if (stacks->a)
-	{
-		if (must_print)
-			ft_printf(1, "pb\n");
-		tmp = stacks->a;
-		stacks->a = stacks->a->next;
-		tmp->next = stacks->b;
-		stacks->b = tmp;
-	}
+	(void) stack;
+	if (direction == 'U')
+		return ((t_way){.move = 10, .direction = direction});
+	else
+		return ((t_way){.move = 20, .direction = direction});
 }
 
-void	push_a(t_stacks *stacks, int must_print)
+t_way	find_way(t_stack *stack)
 {
-	t_stack	*tmp;
+	t_way	up;
+	t_way	down;
 
-	if (stacks->b)
-	{
-		if (must_print)
-			ft_printf(1, "pa\n");
-		tmp = stacks->b;
-		stacks->b = stacks->b->next;
-		tmp->next = stacks->a;
-		stacks->a = tmp;
-	}
+	up = test_way(stack, 'U');
+	up = test_way(stack, 'D');
+	if (up.move > down.move)
+		return (down);
+	else
+		return (up);
 }
