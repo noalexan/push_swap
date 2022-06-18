@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:04:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/16 14:38:00 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/17 10:17:25 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ typedef struct s_stacks
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		nb_of_args;
+	int		size_a;
+	int		size_b;
 }			t_stacks;
 
 int		ft_isalpha(int character);
@@ -72,5 +73,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lst_before_last(t_stack *lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
 #endif

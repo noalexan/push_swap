@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/16 15:00:28 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/17 10:17:51 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		err();
-	stacks.nb_of_args = 0;
-	stacks.a = parse_args(argv + 1, &stacks.nb_of_args);
+	stacks.size_a = 0;
+	stacks.size_b = 0;
+	stacks.a = parse_args(argv + 1, &stacks.size_a);
 	stacks.b = NULL;
 	first_sort(&stacks);
-	lst_clear(stacks.a);
-	// system("leaks push_swap");
+	system("leaks push_swap");
 	return (0);
 }

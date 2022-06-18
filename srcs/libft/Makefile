@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
+#    By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/16 14:37:31 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/17 10:15:36 by noahalexand      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS	:=	ft_atoi.c \
 			ft_putnbr_fd.c \
 			ft_putchar_fd.c \
 			ft_putendl_fd.c \
+			ft_lstadd_back.c \
 			ft_lst_before_last.c \
 
 OBJS	:= $(SRCS:.c=.o)

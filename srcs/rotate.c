@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:48:03 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/16 15:02:22 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:52:26 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,30 @@
 
 void	rotate_a(t_stacks *stacks, int must_print)
 {
-	if (!stacks->a)
-		return ;
-	if (must_print)
-		ft_printf(1, "ra\n");
+	t_stack	*rotate;
+
+ 	if (!stacks->a)
+ 		return ;
+ 	if (must_print)
+ 		ft_printf(1, "ra\n");
+ 	rotate = stacks->a;
+ 	stacks->a = stacks->a->next;
+	rotate->next = NULL;
+ 	ft_lstadd_back(&stacks->a, rotate);
 }
 
 void	rotate_b(t_stacks *stacks, int must_print)
 {
-	t_stack	*tmp;
-	t_stack	*last;
+	t_stack	*rotate;
 
-	if (!stacks->b)
-		return ;
-	if (must_print)
-		ft_printf(1, "rb\n");
-	tmp = stacks->b;
-	stacks->b = stacks->b->next;
-	tmp->next = NULL;
-	last = ft_lstlast(stacks->b);
-	ft_printf(1, "Here\n");
-	last->next = tmp;
+ 	if (!stacks->b)
+ 		return ;
+ 	if (must_print)
+ 		ft_printf(1, "rb\n");
+ 	rotate = stacks->b;
+ 	stacks->b = stacks->b->next;
+	rotate->next = NULL;
+ 	ft_lstadd_back(&stacks->b, rotate);
 }
 
 void	reverse_rotate_a(t_stacks *stacks, int must_print)
@@ -45,18 +48,21 @@ void	reverse_rotate_a(t_stacks *stacks, int must_print)
 		ft_printf(1, "rra\n");
 }
 
+// Ne marche pas
+
 void	reverse_rotate_b(t_stacks *stacks, int must_print)
 {
-	t_stack	*tmp;
+ 	t_stack	*tmp;
 
-	if (!stacks->b)
-		return ;
-	if (must_print)
-		ft_printf(1, "rrb\n");
-	tmp = ft_lstlast(stacks->b);
-	ft_lst_before_last(stacks->b)->next = NULL;
-	tmp->next = stacks->b;
-	stacks->b = tmp;
+ 	if (!stacks->b)
+ 		return ;
+ 	if (must_print)
+ 		ft_printf(1, "rrb\n");
+ 	tmp = ft_lstlast(stacks->b);
+ 	tmp->group = ft_lstlast(stacks->b)->group;
+ 	tmp->next = stacks->b;
+ 	stacks->b = tmp;
+ 	ft_lst_before_last(stacks->b)->next = NULL;
 }
 
 void	rr(t_stacks *stacks, int must_print, int reverse_rotate)

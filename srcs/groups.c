@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   groups.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:05:11 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/16 16:09:12 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/17 11:56:46 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	set_groups(t_stack *stack)
 	tmp = stack;
 	while (stack)
 	{
-		stack->group = 0;
+		stack->group = 1;
 		stack = stack->next;
 	}
 	stack = tmp;
