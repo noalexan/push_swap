@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/16 14:30:08 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:21:09 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_stack	*parse_args(char **argv, int *nb);
 void	check_double(t_stack *stack);
 void	set_groups(t_stack *stack);
 void	first_sort(t_stacks *stacks);
-t_way	find_way(t_stack *stack);
+t_way	find_way(t_stacks *stacks);
 void	push_b(t_stacks *stacks, int must_print);
 void	push_a(t_stacks *stacks, int must_print);
 int		size_of_stack(t_stack *stack);

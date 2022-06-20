@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/17 10:17:51 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/20 11:46:28 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ int	main(int argc, char **argv)
 	stacks.a = parse_args(argv + 1, &stacks.size_a);
 	stacks.b = NULL;
 	first_sort(&stacks);
-	system("leaks push_swap");
 	return (0);
 }

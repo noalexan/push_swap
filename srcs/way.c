@@ -3,33 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   way.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:02:48 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/17 14:31:17 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/20 11:44:57 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_way	test_way(t_stack *stack, unsigned char direction)
+int	find_max(t_stack *lst)
 {
-	(void) stack;
-	if (direction == 'U')
-		return ((t_way){.move = 10, .direction = direction});
-	else if (direction == 'D')
-		return ((t_way){.move = 20, .direction = direction});
-	else
-		return ((t_way){.move = 0, .direction = 0});
+	int	max;
+
+	max = lst->nbr;
+	while (lst)
+	{
+		if (lst->nbr > max)
+			max = lst->nbr;
+		lst = lst->next;
+	}
+	return (max);
 }
 
-t_way	find_way(t_stack *stack)
+t_way	test_way(t_stacks *stacks, unsigned char direction)
+{
+	int	start;
+	int	move;
+	int	max;
+
+	max = find_max(stacks->b);
+	move = 0;
+	start = stacks->b->nbr;
+	while (stacks->b->nbr != max)
+	{
+		move++;
+		if (direction == 'U')
+			reverse_rotate_b(stacks, 0);
+		else if (direction == 'D')
+			rotate_b(stacks, 0);
+	}
+	while (stacks->b->nbr != start)
+		rotate_b(stacks, 0);
+	return ((t_way){.move = move, .direction = direction});
+}
+
+t_way	find_way(t_stacks *stacks)
 {
 	t_way	up;
 	t_way	down;
 
-	up = test_way(stack, 'U');
-	down = test_way(stack, 'D');
+	up = test_way(stacks, 'U');
+	down = test_way(stacks, 'D');
 	if (up.move > down.move)
 		return (down);
 	else
