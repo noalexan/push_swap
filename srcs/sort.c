@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/20 11:20:53 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:58:25 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	first_sort(t_stacks *stacks)
 {
 	while (stacks->size_a)
 	{
+		ft_printf(1, "\t%d - %d - %d\n", stacks->a->nbr, stacks->a->group,
+			stacks->a->place);
 		if (stacks->a->group == 0)
 		{
 			push_b(stacks, 1);

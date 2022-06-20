@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/20 11:21:09 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:11:04 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ void	check_double(t_stack *stack);
 void	set_groups(t_stack *stack);
 void	first_sort(t_stacks *stacks);
 t_way	find_way(t_stacks *stacks);
-void	push_b(t_stacks *stacks, int must_print);
-void	push_a(t_stacks *stacks, int must_print);
 int		size_of_stack(t_stack *stack);
 void	lst_clear(t_stack *stack);
+
+t_stack	*get_max(t_stack *lst);
+
+void	push_b(t_stacks *stacks, int must_print);
+void	push_a(t_stacks *stacks, int must_print);
 
 void	rotate_a(t_stacks *stacks, int must_print);
 void	rotate_b(t_stacks *stacks, int must_print);

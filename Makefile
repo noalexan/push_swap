@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/16 14:02:44 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/20 16:07:28 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ OFLAGS	:= -Werror -Wextra -Wall
 NAME	:= push_swap
 
 SRCS	:=	srcs/way.c \
+			srcs/get.c \
 			srcs/main.c \
 			srcs/push.c \
 			srcs/sort.c \
@@ -43,7 +44,7 @@ RESET	:= "\033[0m"
 
 RM		:= rm -rf
 
-TEST    := 250
+TEST    := 100
 
 .c.o: $(SRCS)
 	@printf $(GREEN)"\r\033[KCompiling objects... "$(YELLOW)"<$<> "$(RESET)"⏳ "

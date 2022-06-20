@@ -6,25 +6,11 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:02:48 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/20 11:44:57 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:11:12 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	find_max(t_stack *lst)
-{
-	int	max;
-
-	max = lst->nbr;
-	while (lst)
-	{
-		if (lst->nbr > max)
-			max = lst->nbr;
-		lst = lst->next;
-	}
-	return (max);
-}
 
 t_way	test_way(t_stacks *stacks, unsigned char direction)
 {
@@ -32,7 +18,7 @@ t_way	test_way(t_stacks *stacks, unsigned char direction)
 	int	move;
 	int	max;
 
-	max = find_max(stacks->b);
+	max = get_max(stacks->b)->nbr;
 	move = 0;
 	start = stacks->b->nbr;
 	while (stacks->b->nbr != max)
