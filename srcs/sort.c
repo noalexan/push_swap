@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/21 12:39:55 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:51:31 by noahalexand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ void	first_sort(t_stacks *stacks)
 	int	i;
 
 	i = 0;
-	while (i++ < stacks->size_a)
+	while (i++ < stacks->size_a + stacks->size_b)
 	{
-		ft_printf(1, "\t%d - %d - %d\n", stacks->a->nbr, stacks->a->group,
-			stacks->a->place);
 		if (stacks->a->group == 0)
 		{
 			push_b(stacks, 1);
