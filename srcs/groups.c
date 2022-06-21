@@ -6,41 +6,47 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:05:11 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/20 17:11:21 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:53:56 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_place(t_stack *stack)
+void	set_place(t_stack *stack, int nb_of_args)
 {
 	t_stack	*tmp;
 	int		place;
+	int		i;
 
 	place = 0;
-	tmp = stack;
-	while (stack)
+	tmp = get_min(stack);
+	i = 0;
+	while (++i < nb_of_args)
 	{
-		stack->place = place;
-		stack = stack->next;
+		tmp->place = place;
+		tmp = get_next_min(stack, tmp->nbr);
+		place++;
 	}
-	stack = tmp;
 }
 
-void	set_pivot(t_stack *stack)
+void	set_groups(t_stack *stack, int nb_of_args)
 {
-	set_place(stack);
-}
-
-void	set_groups(t_stack *stack)
-{
+	int		index_pivot_1;
+	int		index_pivot_2;
 	t_stack	*tmp;
 
-	set_pivot(stack);
+	set_place(stack, nb_of_args);
+	index_pivot_1 = nb_of_args / 3;
+	index_pivot_2 = index_pivot_1 * 2;
 	tmp = stack;
 	while (stack)
 	{
-		stack->group = 0;
+		if (stack->place <= index_pivot_1)
+			stack->group = 0;
+		else if (stack->place > index_pivot_1 && stack->place < index_pivot_2)
+			stack->group = 1;
+		else
+			stack->group = 2;
 		stack = stack->next;
 	}
 	stack = tmp;

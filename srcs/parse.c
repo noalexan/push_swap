@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/16 16:35:12 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/21 11:51:31 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_stack	*parse_args(char **argv, int *nb)
 	next = ft_lstlast(stack);
 	next->next = parse_args(argv + 1, nb);
 	check_double(stack);
-	set_groups(stack);
+	set_groups(stack, nb[0]);
 	return (stack);
 }
 
