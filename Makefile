@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/20 16:07:28 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/24 15:54:23 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRCS	:=	srcs/way.c \
 			srcs/parse.c \
 			srcs/groups.c \
 			srcs/rotate.c \
+			srcs/special_3.c \
+			srcs/special_5.c \
 
 OBJS	:= $(SRCS:.c=.o)
 

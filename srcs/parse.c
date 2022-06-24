@@ -6,11 +6,25 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/21 11:51:31 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:39:29 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	already_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (tmp->nbr > tmp->next->nbr)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 
 void	check_double(t_stack *stack)
 {
@@ -68,13 +82,4 @@ t_stack	*parse_args(char **argv, int *nb)
 	check_double(stack);
 	set_groups(stack, nb[0]);
 	return (stack);
-}
-
-void	lst_clear(t_stack *stack)
-{
-	if (stack)
-	{
-		lst_clear(stack->next);
-		free(stack);
-	}
 }

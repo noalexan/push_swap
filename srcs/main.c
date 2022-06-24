@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/20 11:46:28 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:40:12 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,14 @@ int	main(int argc, char **argv)
 	stacks.size_a = 0;
 	stacks.size_b = 0;
 	stacks.a = parse_args(argv + 1, &stacks.size_a);
+	if (already_sorted(stacks.a))
+		exit(EXIT_SUCCESS);
 	stacks.b = NULL;
-	first_sort(&stacks);
+	if (stacks.size_a == 3)
+		special_3(&stacks);
+	else if (stacks.size_a == 5)
+		special_5(&stacks);
+	else
+		first_sort(&stacks);
 	return (0);
 }
