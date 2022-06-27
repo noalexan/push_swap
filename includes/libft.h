@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:04:44 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/20 16:55:49 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:02:34 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 	int				nbr;
 	int				group;
 	int				place;
+	int				index;
 	struct s_stack	*next;
 }			t_stack;
 

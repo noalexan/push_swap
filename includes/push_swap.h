@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/24 16:40:36 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:10:39 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ typedef struct s_way
 
 t_stack	*parse_args(char **argv, int *nb);
 void	check_double(t_stack *stack);
-int		already_sorted(t_stack *stack);
+int		sorted(t_stack *stack);
 void	set_groups(t_stack *stack, int nb_of_args);
-void	first_sort(t_stacks *stacks);
 t_way	find_way(t_stacks *stacks);
 int		size_of_stack(t_stack *stack);
 void	lst_clear(t_stack *stack);
+
+void	sort_under_250(t_stacks *stacks);
+void	sort_over_250(t_stacks *stacks);
 
 void	special_3(t_stacks *stacks);
 void	special_5(t_stacks *stacks);

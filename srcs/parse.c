@@ -6,13 +6,13 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:31:41 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/24 16:39:29 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:55:14 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	already_sorted(t_stack *stack)
+int	sorted(t_stack *stack)
 {
 	t_stack	*tmp;
 
