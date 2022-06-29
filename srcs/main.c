@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/29 09:25:15 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:06:53 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		err();
 	push_swap(argv + 1);
-	// system("leaks push_swap");
 	return (0);
 }
