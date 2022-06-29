@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:11:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/29 13:23:24 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:47:28 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,49 +38,16 @@ void	special_3(t_stacks *s)
 	}
 }
 
-void	add_nb(t_stacks *s)
-{
-	if (s->b->nbr > s->a->nbr)
-	{
-		rotate_a(s, 1);
-		if (s->b->nbr > s->a->nbr)
-		{
-			rotate_a(s, 1);
-			if (s->b->nbr > s->a->nbr)
-			{
-				rotate_a(s, 1);
-				if (s->a->next->next->next)
-				{
-					if (s->b->nbr > s->a->nbr)
-					{
-						rotate_a(s, 1);
-					}
-				}
-			}
-		}
-	}
-	push_a(s, 1);
-}
-
-void	reset_pos(t_stacks *s)
-{
-	int	min;
-
-	min = get_min(s->a)->nbr;
-	while (s->a->nbr != min)
-		rotate_a(s, 1);
-}
-
 void	special_5(t_stacks *s)
 {
-	// cherche le plus petit push 
-	// cherche le 2 plus petit push 
+	while (s->a->nbr != get_min(s->a)->nbr)
+		rotate_a(s, 1);
 	push_b(s, 1);
+	while (s->a->nbr != get_min(s->a)->nbr)
+		rotate_a(s, 1);
 	push_b(s, 1);
 	if (!sorted(s->a))
 		special_3(s);
-	add_nb(s);
-	reset_pos(s);
-	add_nb(s);
-	reset_pos(s);
+	push_a(s, 1);
+	push_a(s, 1);
 }
