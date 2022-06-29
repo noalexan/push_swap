@@ -6,49 +6,81 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:11:42 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/27 17:52:53 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:23:24 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	special_3(t_stacks *stacks)
+void	special_3(t_stacks *s)
 {
-	if (!(stacks->a->place - 1))
-		ft_printf(1, "sa\nra\n");
-	else if ((stacks->a->place - 1) == 1)
+	if (s->a->nbr < s->a->next->nbr && s->a->nbr < s->a->next->next->nbr)
 	{
-		if (!(stacks->a->next->place - 1))
-			ft_printf(1, "sa\n");
+		swap_a(s, 1);
+		rotate_a(s, 1);
+	}
+	else if (s->a->nbr > s->a->next->nbr && s->a->nbr > s->a->next->next->nbr)
+	{
+		if (s->a->next->nbr < s->a->next->next->nbr)
+			rotate_a(s, 1);
 		else
-			ft_printf(1, "ra\n");
+		{
+			swap_a(s, 1);
+			reverse_rotate_a(s, 1);
+		}
 	}
 	else
 	{
-		if (!(stacks->a->next->place - 1))
-			ft_printf(1, "ra\n");
+		if (s->a->next->nbr < s->a->next->next->nbr)
+			swap_a(s, 1);
 		else
-			ft_printf(1, "sa\nrra\n");
+			reverse_rotate_a(s, 1);
 	}
 }
 
-/*
-
-	1 2 3 - .
-	1 3 2 -> 3 1 2 -> 1 2 3 - sa ra
-	2 1 3 -> 1 2 3 - sa
-	2 3 1 -> 1 2 3 - ra
-	3 1 2 -> 1 2 3 - rra
-	3 2 1 -> 2 3 1 -> 1 2 3 - sa rra
-
-*/
-
-void	special_5(t_stacks *stacks)
+void	add_nb(t_stacks *s)
 {
-	(void) stacks;
+	if (s->b->nbr > s->a->nbr)
+	{
+		rotate_a(s, 1);
+		if (s->b->nbr > s->a->nbr)
+		{
+			rotate_a(s, 1);
+			if (s->b->nbr > s->a->nbr)
+			{
+				rotate_a(s, 1);
+				if (s->a->next->next->next)
+				{
+					if (s->b->nbr > s->a->nbr)
+					{
+						rotate_a(s, 1);
+					}
+				}
+			}
+		}
+	}
+	push_a(s, 1);
 }
 
-/*
+void	reset_pos(t_stacks *s)
+{
+	int	min;
 
+	min = get_min(s->a)->nbr;
+	while (s->a->nbr != min)
+		rotate_a(s, 1);
+}
 
-*/
+void	special_5(t_stacks *s)
+{
+	// cherche le plus petit push 
+	// cherche le 2 plus petit push 
+	push_b(s, 1);
+	push_b(s, 1);
+	if (!sorted(s->a))
+		special_3(s);
+	add_nb(s);
+	reset_pos(s);
+	add_nb(s);
+	reset_pos(s);
+}

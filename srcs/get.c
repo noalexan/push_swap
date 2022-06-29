@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:05:46 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/21 11:42:27 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:24:00 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_stack	*get_min(t_stack *lst)
 	min = lst;
 	while (lst)
 	{
-		if (lst->nbr > min->nbr)
+		if (lst->nbr < min->nbr)
 			min = lst;
 		lst = lst->next;
 	}

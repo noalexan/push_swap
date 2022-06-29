@@ -6,7 +6,7 @@
 #    By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:13 by noalexan          #+#    #+#              #
-#    Updated: 2022/06/27 16:12:50 by noalexan         ###   ########.fr        #
+#    Updated: 2022/06/28 09:16:40 by noalexan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NAME	:= push_swap
 SRCS	:=	srcs/way.c \
 			srcs/get.c \
 			srcs/main.c \
+			srcs/swap.c \
 			srcs/push.c \
 			srcs/sort.c \
 			srcs/parse.c \

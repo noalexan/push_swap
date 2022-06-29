@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:31:27 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/27 16:10:39 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/28 09:26:48 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ t_stack	*get_next_min(t_stack *lst, int _min);
 
 void	push_b(t_stacks *stacks, int must_print);
 void	push_a(t_stacks *stacks, int must_print);
+
+void	swap_a(t_stacks *stacks, int must_print);
+void	swap_b(t_stacks *stacks, int must_print);
 
 void	rotate_a(t_stacks *stacks, int must_print);
 void	rotate_b(t_stacks *stacks, int must_print);
