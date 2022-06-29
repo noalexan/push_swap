@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   groups.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahalexandre <noahalexandre@student.42    +#+  +:+       +#+        */
+/*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:05:11 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/21 16:42:23 by noahalexand      ###   ########.fr       */
+/*   Updated: 2022/06/29 18:08:46 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	set_place(t_stack *stack, int nb_of_args)
 {
-	t_stack	*tmp;
+	t_stack	*min;
 	int		place;
 	int		i;
 
-	place = 0;
-	tmp = get_min(stack);
 	i = 0;
+	place = 1;
+	min = get_min(stack);
 	while (++i < nb_of_args)
 	{
-		tmp->place = tmp->nbr;
-		tmp = get_next_min(stack, tmp->nbr);
-		place++;
+		min->place = place++;
+		ft_printf(1, "%d\t-\t%d\n", min->nbr, min->place);
+		min = get_next_min(stack, min->nbr);
 	}
 }
 

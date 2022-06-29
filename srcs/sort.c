@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/29 14:00:00 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:51:49 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	sort_over_250(t_stacks *stacks)
 		i = 0;
 		while (i++ < stacks->size_a + stacks->size_b)
 		{
-			if (stacks->a->nbr & 1)
+			if (stacks->a->place & 1)
 				rotate_a(stacks, 1);
 			else
 				push_b(stacks, 1);
@@ -72,7 +72,7 @@ void	sort_over_250(t_stacks *stacks)
 		i = 0;
 		while (i++ < stacks->size_a)
 		{
-			stacks->a->nbr >>= 1;
+			stacks->a->place >>= 1;
 			rotate_a(stacks, 0);
 		}
 	}
