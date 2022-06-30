@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:06 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/29 17:51:49 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/06/30 11:06:35 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,10 @@ void	sort_under_250(t_stacks *stacks)
 void	sort_over_250(t_stacks *stacks)
 {
 	int	i;
+	int	j;
 
-	while (!sorted(stacks->a))
+	j = 0;
+	while (j++ < 10)
 	{
 		i = 0;
 		while (i++ < stacks->size_a + stacks->size_b)
