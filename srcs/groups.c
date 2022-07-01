@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:05:11 by noahalexand       #+#    #+#             */
-/*   Updated: 2022/06/30 11:05:48 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:27:06 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,13 @@ void	set_place(t_stack *s, int nb_of_args)
 	tmp = s;
 	tri = pre_tri(s, nb_of_args);
 	place = -1;
-	// while (++place < nb_of_args)
-		// ft_printf(1, "\t%d\t- %d\n", tri[place], place);
 	while (++i < nb_of_args)
 	{
 		place = -1;
 		while (++place < nb_of_args)
-		{
 			if (tri[place] == s->nbr)
-			{
-				// ft_printf(1, "%d\t== %d\n", tri[place], s->nbr);
 				break ;
-			}
-		}
 		s->place = place;
-		ft_printf(1, "%d \t- %d\n", s->nbr, s->place);
 		s = s->next;
 	}
 	free(tri);

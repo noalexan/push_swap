@@ -6,7 +6,7 @@
 /*   By: noalexan <noalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:00:50 by noalexan          #+#    #+#             */
-/*   Updated: 2022/06/30 11:06:01 by noalexan         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:26:50 by noalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ t_stacks	push_swap(char **argv)
 	stacks.size_a = 0;
 	stacks.size_b = 0;
 	stacks.a = parse_args(argv, &stacks.size_a);
-	set_groups(stacks.a, stacks.size_a);
-	// exit(EXIT_SUCCESS);
 	stacks.b = NULL;
+	set_groups(stacks.a, stacks.size_a);
 	if (sorted(stacks.a))
 		exit(EXIT_SUCCESS);
 	if (stacks.size_a == 3)
