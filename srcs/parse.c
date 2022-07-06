@@ -59,7 +59,7 @@ t_stack	*parse_args2(char **argv, int *nb)
 
 	if (!*argv)
 		return (NULL);
-	if (!argv[0][0])
+	if (!argv[0])
 		err();
 	*nb += 1;
 	stack = parse_args3(ft_atoi(*argv));
